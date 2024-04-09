@@ -11,4 +11,12 @@
 # .ipypb ( before jupyter there was i python)
 # Check points are used for sort of version control
 # Databrinks can write in all language
+# break: exits loop
+# continue: skips
 
+#break
+# Code Demo
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
