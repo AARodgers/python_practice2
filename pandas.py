@@ -59,9 +59,8 @@ print(df)
 df['Age'][0] = 56
 
 #Reading a csv file
+# Means store csv and make it into a pandas dataframe
 df = pd.read_csv('data.csv')
 
 #writing to or creating csv file, index = False means to not have first column be nums or index
 df.to_csv('new_data.csv', index=False)
-
-
