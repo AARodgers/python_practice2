@@ -51,7 +51,7 @@ df['Salary'] = [70000, 80000, 90000]
 print(df)
 
 #Deleting a column, inplace means keep the column in same order
-# dropping deletes stuff forever
+# dropping deletes stuff forever, axis=1 so it knows it is a column
 df.drop('Salary', axis=1, inplace=True)
 print(df)
 
@@ -64,3 +64,62 @@ df = pd.read_csv('data.csv')
 
 #writing to or creating csv file, index = False means to not have first column be nums or index
 df.to_csv('new_data.csv', index=False)
+
+# Statistical functions
+
+# gives overview of dataframe numbers
+print(df.describe())
+
+# spotify
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('Most_Streamed_Spotify_Songs_2023.csv')
+
+# Show the first 5 rows
+print(df.head())
+
+# Export to just CSV with deliminate with comman
+
+#Load spotify csv
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('Most_Streamed_Spotify_Songs_2023.csv')
+
+# Show the first 5 rows
+print(df.head())
+
+# get overview of data
+df.describe()
+
+or
+
+df.info()
+
+# Filter the songs, you get an error because it can't parse the line 574
+# drop or delete a row
+df = df.drop(574)
+
+# Convert string to integer
+df['streams_float'] = df['streams'].astype(float)
+
+filtered_songs = df[df['streams_float'] > 1_000_000_000]
+
+# Show the filtered songs
+print(filtered_songs)
+
+# list top most five with danceability
+# Sort and filter the top 5 most danceable songs
+top_danceable_songs = df.sort_values('danceability_%', ascending=False).head(5)
+
+# Show the top 5 most danceable songs
+print(top_danceable_songs)
+
+# Calculate the average BPM by artist ( group by artist and subset or
+# summarize by beats per minute)
+# Example of summarization or aggregation
+avg_bpm_by_artist = df.groupby('artist(s)_name')['bpm'].mean()
+
+# Show the result
+print(avg_bpm_by_artist)
