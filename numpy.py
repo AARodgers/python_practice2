@@ -1,4 +1,6 @@
-# Working with Numpy
+# Working with Numpy: good to use when you are just working numbers but Panda is good
+# with mix of strings and numbers, pandas depends on numpy
+
 pip install numpy
 
 #Import numpy
@@ -41,3 +43,15 @@ b = 2
 
 # Broadcasting
 print(a * b)  # Output: [2 4 6]
+
+# Slicing an array
+a = np.array([1, 2, 3, 4, 5])
+print(a[1:4])  # Output: [2 3 4]
+
+# Importing and Exporting Data
+#Importing and Exporting Data
+# Save an array to a text file
+np.savetxt('array.txt', a)
+
+# Load data from a text file
+b = np.loadtxt('array.txt')
