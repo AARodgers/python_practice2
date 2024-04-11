@@ -126,3 +126,37 @@ avg_bpm_by_artist = df.groupby('artist(s)_name')['bpm'].mean()
 
 # Show the result
 print(avg_bpm_by_artist)
+
+#can remove rows that have NaN values in a DataFrame using the dropna() method in pandas.
+import pandas as pd
+
+# Assuming df is your DataFrame
+
+# Drop rows with NaN values
+df_clean = df.dropna()
+
+# Alternatively, you can specify the axis parameter to remove columns with NaN values
+# df_clean = df.dropna(axis=1)
+
+# Print the cleaned DataFrame
+print(df_clean)
+
+# when you call a group_by it doesn't return a dataframe
+my_data_new = my_data[[column1, column2]]
+
+# to create a dataframe after using group_by
+#grouped.reset_index()
+x = y.reset_index()
+x
+
+# drop or delete rows that have missing values, globally
+my_data.dropna(inplace=True)
+
+# pick two columns to work with
+# Select columns of interest
+# subsetting, give list of column names you want to subset
+selected_data = my_data[['location', 'med_salary']]
+selected_data.dropna(inplace=True)
+selected_data
+
+#
