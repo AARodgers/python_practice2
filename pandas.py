@@ -1,6 +1,9 @@
 # Learn pandas, numpy, matplotlib, and ploty
 # scikicklearn for machine learning
 
+#Load csv
+my_data = pd.read_csv('file_name.csv')
+
 # Pandas (panel data)
 handles series ( an array) adn dataframes ( 2 dimenstional, x and y, rows and columns)
 
