@@ -124,4 +124,6 @@ px.bar(summarized_data,
        title = "Medium Salaries by Location",
        labels = {'med_salary' : 'Average Salary', 'location' : 'Location'},
        color = 'location'
-    )
+    ).update_layout(.title_x=0.5, font_family="Courier New")
+
+# can do px.pie

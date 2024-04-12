@@ -141,7 +141,7 @@ df_clean = df.dropna()
 # Print the cleaned DataFrame
 print(df_clean)
 
-# when you call a group_by it doesn't return a dataframe
+# when you call a group_by it doesn't return a dataframe 
 my_data_new = my_data[[column1, column2]]
 
 # to create a dataframe after using group_by
