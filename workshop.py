@@ -69,3 +69,29 @@ selected_data.sort_values('med_salary', ascending=False).head(5)
 
 # lowest five salaries
 selected_data.sort_values('med_salary', ascending=False).head(5)
+
+# group by, once executed it is no longer a dataframe
+selected_data.groupby('location')['med_salary'].mean()
+
+# to make it back into a dataframe need to use reset_index
+summarized_data = selected_data.reset_index()
+summarized_data
+
+#  Use ploty to visualize data
+# Install plotly
+pip install plotly
+
+# Create bar plot
+# Import plotly ( express)
+import plotly.express as px
+
+# create bar chart
+px.bar(summarized_data, x = "location", y = "med_salary", title = "Medium Salaries by Location")
+
+# Change the label names
+px.bar(summarized_data,
+       x = "location",
+       y = "med_salary",
+       title = "Medium Salaries by Location",
+       labels = {'med_salary' : 'Average Salary', 'location' : 'Location'}
+    )
