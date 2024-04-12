@@ -93,5 +93,35 @@ px.bar(summarized_data,
        x = "location",
        y = "med_salary",
        title = "Medium Salaries by Location",
-       labels = {'med_salary' : 'Average Salary', 'location' : 'Location'}
+       labels = {'med_salary' : 'Average Salary', 'location' : 'Location'},
+       color = 'location'
+    )
+
+# -----------------------------------
+# New columns
+
+new_selected_data = my_data[['title', 'max_salary']]
+new_selected_data.dropna(inplace=True)
+new_selected_data
+
+new_selected_data = new_selected_data.groupby('title')['max_salary'].mean()
+new_selected_data
+
+new_summarized_data = new_selected_data.reset_index()
+new_summarized_data
+
+px.bar(new_summarized_data,
+       x = 'title',
+       y = 'max_salary',
+       title = "Job Titles Maximum Average Salaries",
+       labels = {'title' : 'Job Title', 'max_salary' : 'Average Maximum Salaries'},
+       color = 'title'
+    )
+
+px.bar(summarized_data,
+       x = "location",
+       y = "med_salary",
+       title = "Medium Salaries by Location",
+       labels = {'med_salary' : 'Average Salary', 'location' : 'Location'},
+       color = 'location'
     )
