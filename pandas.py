@@ -141,7 +141,7 @@ df_clean = df.dropna()
 # Print the cleaned DataFrame
 print(df_clean)
 
-# when you call a group_by it doesn't return a dataframe 
+# when you call a group_by it doesn't return a dataframe
 my_data_new = my_data[[column1, column2]]
 
 # to create a dataframe after using group_by
@@ -159,4 +159,15 @@ selected_data = my_data[['location', 'med_salary']]
 selected_data.dropna(inplace=True)
 selected_data
 
-#
+# value_counts
+
+# Sample DataFrame
+data = {'col1': [True, False, True, True, False, False, True]}
+df = pd.DataFrame(data)
+
+# Count occurrences of True and False in the 'col1' column
+counts = df['col1'].value_counts()
+
+# Print the counts
+print("Occurrences of True and False:")
+print(counts)
