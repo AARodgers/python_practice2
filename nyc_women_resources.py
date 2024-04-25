@@ -4,7 +4,7 @@
 
 # Import pandas and numpy libraries
 import pandas as pd
-import numpy as np
+import numpy_practice as np
 
 # Load data
 initial_data = pd.read_csv('NYC_Women_Resources.csv')

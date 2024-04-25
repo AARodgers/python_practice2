@@ -1,10 +1,10 @@
 # Working with Numpy: good to use when you are just working numbers but Panda is good
 # with mix of strings and numbers, pandas depends on numpy
 
-pip install numpy
+#pip install numpy
 
 #Import numpy
-import numpy as np
+import numpy_practice as np
 
 # make array
 a = np.array([1, 2, 3])
